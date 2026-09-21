@@ -1,0 +1,63 @@
+{
+  "name": "api-tripwire",
+  "version": "0.1.0",
+  "description": "Local static analysis for likely API contract drift",
+  "type": "module",
+  "license": "MIT",
+  "author": "api-tripwire contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/api-tripwire.git"
+  },
+  "keywords": [
+    "api",
+    "contracts",
+    "static-analysis",
+    "typescript",
+    "drift"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "bin": {
+    "api-tripwire": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "CONTRIBUTING.md",
+    "VERIFICATION.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "format": "eslint src test scripts --fix && prettier --write .",
+    "format:check": "prettier --check .",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test scripts",
+    "test": "vitest run",
+    "verify:fixtures": "node scripts/verify-fixtures.mjs",
+    "verify:package": "node scripts/verify-package.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "fast-glob": "^3.3.3",
+    "picocolors": "^1.1.1",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "3.9.8",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^4.0.0"
+  }
+}

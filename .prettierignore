@@ -1,0 +1,8 @@
+node_modules/
+dist/
+coverage/
+package-lock.json
+*.tgz
+test/__snapshots__/
+.api-tripwire/
+.api-tripwire-baseline.json

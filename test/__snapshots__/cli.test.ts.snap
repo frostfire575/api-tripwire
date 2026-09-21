@@ -1,0 +1,62 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`terminal plain, colored and narrow snapshots > ci 1`] = `
+"api-tripwire
+
+CONFIRMED GET /api/users/:id
+  Consumer reads userId, absent from all known success responses
+  consumer client.ts:4:10
+  provider server.ts:3:1
+  Did you mean id?
+  Evidence: Static json response
+
+1 routes · 1 consumers · 1 matched
+1 findings · 0 suppressed · 0 coverage diagnostics"
+`;
+
+exports[`terminal plain, colored and narrow snapshots > color 1`] = `
+"[1mapi-tripwire · API contract drift[22m
+
+[31m× CONFIRMED GET /api/users/:id[39m
+  Consumer reads userId, absent from all known success responses
+  consumer client.ts:4:10
+  provider server.ts:3:1
+  [36mDid you mean id?[39m
+  Evidence: Static json response
+
+1 routes · 1 consumers · 1 matched
+1 findings · 0 suppressed · 0 coverage diagnostics"
+`;
+
+exports[`terminal plain, colored and narrow snapshots > narrow 1`] = `
+"api-tripwire · API contract
+drift
+
+× CONFIRMED GET /api/users/:id
+  Consumer reads userId, absent
+  from all known success
+  responses
+  consumer client.ts:4:10
+  provider server.ts:3:1
+  Did you mean id?
+  Evidence: Static json response
+
+1 routes · 1 consumers · 1
+matched
+1 findings · 0 suppressed · 0
+coverage diagnostics"
+`;
+
+exports[`terminal plain, colored and narrow snapshots > plain 1`] = `
+"api-tripwire · API contract drift
+
+× CONFIRMED GET /api/users/:id
+  Consumer reads userId, absent from all known success responses
+  consumer client.ts:4:10
+  provider server.ts:3:1
+  Did you mean id?
+  Evidence: Static json response
+
+1 routes · 1 consumers · 1 matched
+1 findings · 0 suppressed · 0 coverage diagnostics"
+`;
