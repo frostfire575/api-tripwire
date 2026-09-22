@@ -7,7 +7,7 @@
   "author": "api-tripwire contributors",
   "repository": {
     "type": "git",
-    "url": "https://github.com/frostfire575/api-tripwire.git"
+    "url": "git+https://github.com/frostfire575/api-tripwire.git"
   },
   "keywords": [
     "api",
