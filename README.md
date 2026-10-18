@@ -1,4 +1,17 @@
-# api-tripwire
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/frostfire575/api-tripwire/main/docs/assets/logo-white.svg">
+    <img src="https://raw.githubusercontent.com/frostfire575/api-tripwire/main/docs/assets/logo-black.svg" alt="API Tripwire logo: two endpoints connected by a zigzag tripwire" width="220" height="88">
+  </picture>
+</p>
+
+<h1 align="center">api-tripwire</h1>
+
+<p align="center"><strong>Catch API contract drift before production.</strong></p>
+
+<p align="center">
+  <a href="#install-and-try">Quick start</a> · <a href="#support-matrix">Supported frameworks</a> · <a href="#github-actions">CI setup</a>
+</p>
 
 [![npm version](https://img.shields.io/npm/v/api-tripwire)](https://www.npmjs.com/package/api-tripwire)
 [![Package checks](https://github.com/frostfire575/api-tripwire/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/frostfire575/api-tripwire/actions/workflows/ci.yml)
