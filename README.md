@@ -181,7 +181,7 @@ npm run verify:fixtures
 npm run verify:package
 ```
 
-The package check packs a tarball, installs it offline into a temporary project, invokes local npx without registry fallback, checks the demo exit code, imports the public API and compiles a declaration consumer. Run the build before tests because CLI tests exercise `dist/cli.js`. See [CONTRIBUTING.md](CONTRIBUTING.md) and [VERIFICATION.md](VERIFICATION.md).
+The package check packs a tarball, installs it into a temporary project (fetching dependencies from the registry as needed), invokes local npx without registry fallback, checks the demo exit code, imports the public API and compiles a declaration consumer. Run the build before tests because CLI tests exercise `dist/cli.js`. See [CONTRIBUTING.md](CONTRIBUTING.md) and [VERIFICATION.md](VERIFICATION.md).
 
 ## License
 

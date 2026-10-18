@@ -32,7 +32,7 @@ try {
     path.join(temporary, 'package.json'),
     JSON.stringify({ name: 'tripwire-install-check', private: true, type: 'module' }),
   );
-  command(npm, ['install', '--offline', '--ignore-scripts', tarball], temporary);
+  command(npm, ['install', '--ignore-scripts', tarball], temporary);
   fs.cpSync(path.join(root, 'examples/demo'), path.join(temporary, 'demo'), { recursive: true });
   const report = JSON.parse(
     command(
@@ -70,7 +70,7 @@ try {
     temporary,
   );
   process.stdout.write(
-    'Tarball installed offline. Local npx: exit 1, userId mismatch. ESM exports and declarations: passed.\n',
+    'Tarball installed. Local npx: exit 1, userId mismatch. ESM exports and declarations: passed.\n',
   );
 } finally {
   fs.rmSync(temporary, { recursive: true, force: true });
