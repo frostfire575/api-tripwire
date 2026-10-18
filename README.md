@@ -13,12 +13,15 @@
   <a href="#install-and-try">Quick start</a> · <a href="#support-matrix">Supported frameworks</a> · <a href="#github-actions">CI setup</a>
 </p>
 
-[![npm version](https://img.shields.io/npm/v/api-tripwire)](https://www.npmjs.com/package/api-tripwire)
-[![Package checks](https://github.com/frostfire575/api-tripwire/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/frostfire575/api-tripwire/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Node.js version](https://img.shields.io/node/v/api-tripwire)](https://www.npmjs.com/package/api-tripwire)
-[![TypeScript declarations](https://img.shields.io/badge/TypeScript-declarations-blue.svg)](https://github.com/frostfire575/api-tripwire/blob/main/src/index.ts)
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+<p align="center">
+  <a href="https://www.npmjs.com/package/api-tripwire"><img src="https://img.shields.io/npm/v/api-tripwire" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/api-tripwire"><img src="https://img.shields.io/npm/dm/api-tripwire?label=downloads&amp;color=brightgreen" alt="npm monthly downloads"></a>
+  <a href="https://github.com/frostfire575/api-tripwire/actions/workflows/ci.yml"><img src="https://github.com/frostfire575/api-tripwire/actions/workflows/ci.yml/badge.svg?branch=main" alt="Package checks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
+  <a href="https://www.npmjs.com/package/api-tripwire"><img src="https://img.shields.io/node/v/api-tripwire" alt="Node.js version"></a>
+  <a href="https://github.com/frostfire575/api-tripwire/blob/main/src/index.ts"><img src="https://img.shields.io/badge/TypeScript-declarations-blue.svg" alt="TypeScript declarations"></a>
+  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome"></a>
+</p>
 
 Find likely API contract drift before a consumer reaches production. Tripwire reads local JavaScript and TypeScript, connects HTTP consumers to backend routes, and compares the fields they exchange. It never runs your application or configuration.
 
