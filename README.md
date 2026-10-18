@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/api-tripwire"><img src="https://img.shields.io/npm/v/api-tripwire" alt="npm version"></a>
-  <a href="https://www.npmjs.com/package/api-tripwire"><img src="https://img.shields.io/npm/dt/api-tripwire?label=download&amp;color=brightgreen" alt="Lifetime npm downloads" title="Lifetime npm downloads"></a>
+  <a href="https://www.npmjs.com/package/api-tripwire"><img src="https://img.shields.io/npm/dt/api-tripwire?label=total%20downloads&amp;color=brightgreen" alt="Lifetime npm downloads" title="Lifetime npm downloads"></a>
   <a href="https://github.com/frostfire575/api-tripwire/actions/workflows/ci.yml"><img src="https://github.com/frostfire575/api-tripwire/actions/workflows/ci.yml/badge.svg?branch=main" alt="Package checks"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
   <a href="https://www.npmjs.com/package/api-tripwire"><img src="https://img.shields.io/node/v/api-tripwire" alt="Node.js version"></a>
@@ -27,14 +27,23 @@
 
 Use it to catch a frontend reading a renamed response field or sending a request that misses a required field—before the change reaches production. It works with common Express, Fastify, Hono, and Next.js patterns, requires no running server, and provides terminal output, JSON reports, and CI exit codes.
 
+For example, when a backend returns `id` but its client reads `userId`:
+
+```text
+× CONFIRMED GET /api/users/:id
+  Consumer reads userId, absent from all known success responses
+  consumer client.ts:4:10
+  provider server.ts:3:1
+  Did you mean id?
+```
+
+See the [provider and consumer code](#example-catch-a-renamed-response-field) below.
+
 ## Why use api-tripwire?
 
-- **Catch drift during development.** Find consumers that still read a response field after a backend change.
-- **Check both sides of a request.** Compare response field access and recognized request body/query expectations.
 - **Start with your existing code.** Most projects need no configuration or separate API schema.
 - **Find the source of a mismatch.** Findings include consumer/provider locations, confidence, and supporting evidence.
 - **Add contract checks to CI.** Set a failure threshold and baseline existing findings when adopting the tool.
-- **Use reports in scripts and AI coding tools.** Export versioned JSON or call the typed ESM API.
 - **Keep analysis local.** Scans do not execute your application or configuration, make network requests, or upload source code.
 
 An **API contract** describes the data a route accepts and returns. **Contract drift** happens when the provider and its consumers disagree about that data. Here, a **provider** is a backend route handler and a **consumer** is code making an HTTP request.
@@ -115,17 +124,7 @@ async function loadUser() {
 }
 ```
 
-Run `npx api-tripwire scan .`. The finding includes:
-
-```text
-× CONFIRMED GET /api/users/:id
-  Consumer reads userId, absent from all known success responses
-  consumer client.ts:4:10
-  provider server.ts:3:1
-  Did you mean id?
-```
-
-The scan exits with code `1` at the default threshold. Review the intended contract, then update the client access to `user.id` if the backend response is correct.
+Run `npx api-tripwire scan .` to get the finding shown above. The scan exits with code `1` at the default threshold. Review the intended contract, then update the client access to `user.id` if the backend response is correct.
 
 To run the included example from a checkout of this repository:
 
