@@ -10,4 +10,6 @@ For analysis changes, add a regression that exercises both the intended finding 
 
 Keep baseline IDs independent of line numbers and fingerprints independent of formatting. Snapshot changes should explain a user-visible output change. CLI tests exercise built artifacts; rebuild after changing source. Test fixtures intentionally omit framework dependencies because they are parsed, not executed.
 
-Before proposing a release, replace placeholder repository metadata, inspect `npm pack --dry-run`, run tarball installation verification, and review README claims against tests. This workflow does not publish packages.
+Pull requests are welcome. Describe the problem and resulting behavior, include relevant validation, and link any related issue. Use [GitHub issues](https://github.com/frostfire575/api-tripwire/issues) for bug reports and feature requests; include a minimal reproduction and your Node/package versions when reporting a bug.
+
+Before proposing a release, update `CHANGELOG.md`, verify the package version and repository metadata, inspect `npm pack --dry-run`, run tarball installation verification, and review README claims against tests. GitHub release tags should point to the commit used for the corresponding npm publication. The package-check workflow does not publish packages.

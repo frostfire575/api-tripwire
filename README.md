@@ -1,5 +1,12 @@
 # api-tripwire
 
+[![npm version](https://img.shields.io/npm/v/api-tripwire)](https://www.npmjs.com/package/api-tripwire)
+[![Package checks](https://github.com/frostfire575/api-tripwire/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/frostfire575/api-tripwire/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Node.js version](https://img.shields.io/node/v/api-tripwire)](https://www.npmjs.com/package/api-tripwire)
+[![TypeScript declarations](https://img.shields.io/badge/TypeScript-declarations-blue.svg)](https://github.com/frostfire575/api-tripwire/blob/main/src/index.ts)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 Find likely API contract drift before a consumer reaches production. Tripwire reads local JavaScript and TypeScript, connects HTTP consumers to backend routes, and compares the fields they exchange. It never runs your application or configuration.
 
 ```text
@@ -10,11 +17,18 @@ Find likely API contract drift before a consumer reaches production. Tripwire re
   Did you mean id?
 ```
 
-Version 0.1.0 requires Node ≥22.12.0. This repository is a package implementation; no npm publication is implied. The repository URL in package.json is a placeholder to replace before publishing.
+Requires Node ≥22.12.0. Available on [npm](https://www.npmjs.com/package/api-tripwire), with TypeScript declarations included. See the [changelog](CHANGELOG.md) and [GitHub releases](https://github.com/frostfire575/api-tripwire/releases) for release notes.
 
 ## Install and try
 
-After publication, install with `npm install --save-dev api-tripwire`. To try this checkout:
+Install from npm:
+
+```sh
+npm install --save-dev api-tripwire
+npx api-tripwire scan .
+```
+
+To try this checkout:
 
 ```sh
 npm install

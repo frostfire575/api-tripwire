@@ -9,6 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/frostfire575/api-tripwire.git"
   },
+  "homepage": "https://github.com/frostfire575/api-tripwire#readme",
+  "bugs": {
+    "url": "https://github.com/frostfire575/api-tripwire/issues"
+  },
   "keywords": [
     "api",
     "contracts",
@@ -32,6 +36,7 @@
   "files": [
     "dist",
     "README.md",
+    "CHANGELOG.md",
     "CONTRIBUTING.md",
     "VERIFICATION.md",
     "LICENSE"
